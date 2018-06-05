@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "admin",
+  "name": "@cerberus/admin",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -8,25 +8,28 @@
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch -p 8081",
-    "lint": "eslint src",
+    "lint": "standard",
     "test": "jest ./tests"
   },
-  "eslintConfig": {
-    "extends": "eslint-config-synacor"
+  "standard": {
+    "parser": "babel-eslint",
+    "plugins": [ "react" ]
   },
   "eslintIgnore": [
     "build/*"
   ],
   "devDependencies": {
-    "eslint": "^4.9.0",
-    "eslint-config-synacor": "^2.0.2",
+    "babel-eslint": "^8.2.3",
+    "eslint-plugin-react": "^7.9.1",
     "identity-obj-proxy": "^3.0.0",
     "if-env": "^1.0.0",
     "jest": "^21.2.1",
-    "preact-cli": "^2.1.0",
-    "preact-render-spy": "^1.2.1"
+    "preact-cli": "^2.2.1",
+    "preact-render-spy": "^1.2.1",
+    "standard": "^11.0.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "preact": "^8.2.6",
     "preact-compat": "^3.17.0",
     "preact-router": "^2.5.7"
