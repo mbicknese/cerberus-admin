@@ -1,6 +1,6 @@
 export const apiHost = 'localhost'
 export const apiPort = '8080'
-export const apiProtocol = 'https'
+export const apiProtocol = 'http'
 export const clientId = '27fe3b07-625f-4bad-b2c2-cb4c5c017394'
 // export const clientId = process.env.clientId || '70d5111a-1f5a-4161-9edb-2f542c9d8236'
 export const clientSecret = '/tgqNL/RCaUClFcaPGV4szmkz/s2ch5DZycE/N9938o='

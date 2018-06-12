@@ -1,18 +1,14 @@
-import Axios from 'axios'
-
 import './style'
 import App from './components/app'
-import createClient from './oAuth'
-import ClientStrategy from './oAuth/GrantStrategies/ClientStrategy'
+import { AxiosFactory } from './HttpAgent'
+import { ClientGrant } from './HttpAgent/GrantStrategies'
 import { clientId, clientSecret } from './config'
 
-const buildClient = async () => {
-  const grant = new ClientStrategy
+const buildClient = () => {
+  const grant = new ClientGrant()
   grant.setCredentials(clientId, clientSecret)
-  const client = await createClient(grant, Axios)
-
-  // Proof of concept
-  client.get('api/client')
+  const factory = new AxiosFactory({ port: 8080 })
+  factory.createAgent(grant).then(client => client.get('api/client'))
 }
 
 buildClient()

@@ -90,10 +90,7 @@
     },
     "testURL": "http://localhost:8081",
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)$",
-    "moduleFileExtensions": [
-      "js",
-      "ts"
-    ],
+    "moduleFileExtensions": ["js", "ts"],
     "moduleDirectories": [
       "node_modules"
     ],

@@ -1,10 +1,9 @@
-/* eslint-env jest */
-import ClientStrategy from '../../../oAuth/GrantStrategies/ClientStrategy'
+import ClientGrant from '../../../HttpAgent/GrantStrategies/ClientGrant'
 
-describe('ClientStrategy', () => {
+describe('ClientGrant', () => {
   it('Uses given credentials to retrieve access token', async () => {
     const client = {post: jest.fn(() => Promise.resolve({ data: { access_token: 'RandomAccessToken' } }))}
-    const strategy = new ClientStrategy
+    const strategy = new ClientGrant()
     strategy.setCredentials('foo', 'bar')
 
     const token = await strategy.retrieveAccessToken(client)
