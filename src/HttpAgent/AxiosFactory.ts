@@ -2,6 +2,7 @@ import Axios, { AxiosStatic, AxiosInstance } from 'axios'
 import GrantStrategy from './GrantStrategies/GrantStrategy'
 import ServerConfig from './ServerConfig'
 import { PersistenceStrategy, InMemoryToken } from './PersistenceStrategies'
+import forbiddenInterceptor from './forbiddenInterceptor'
 
 const defaultServer: ServerConfig = {
   host: 'localhost',
@@ -34,6 +35,7 @@ export default class AxiosFactory {
       persistence.persist(await grant.retrieveAccessToken(client))
     }
     client.defaults.headers.common.Authorization = `Bearer ${persistence.restore()}`
+    client.interceptors.response.use(null, forbiddenInterceptor(grant, client))
     return client
   }
 }

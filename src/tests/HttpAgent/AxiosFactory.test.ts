@@ -6,7 +6,10 @@ import PersistenceStrategy from '../../HttpAgent/PersistenceStrategies/Persisten
 describe('AxiosFactory', () => {
   it('returns sane defaults', async (done) => {
     const factory = new AxiosFactory()
-    const mockGrant: GrantStrategy = { retrieveAccessToken: async (client: AxiosInstance) => 'SecureToken' }
+    const mockGrant: GrantStrategy = {
+      retrieveAccessToken: async (client: AxiosInstance) => 'SecureToken',
+      handleForbidden: (_) => {}
+    }
     const mockPersistence: PersistenceStrategy = {
       hasToken (): boolean { return false },
       isSupported (): boolean { return true },

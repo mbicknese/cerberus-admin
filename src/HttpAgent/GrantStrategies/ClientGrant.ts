@@ -16,12 +16,16 @@ export default class ClientGrant implements GrantStrategy {
     this.setCredentials(id, secret)
   }
 
-  setCredentials (id: String, secret: String) {
+  public async handleForbidden (client: AxiosInstance): Promise<void> {
+    client.defaults.headers.common.Authorization = `Bearer ${await this.retrieveAccessToken(client)}`
+  }
+
+  public setCredentials (id: String, secret: String) {
     this.id = id
     this.secret = secret
   }
 
-  async retrieveAccessToken (client: AxiosInstance): Promise<string> {
+  public async retrieveAccessToken (client: AxiosInstance): Promise<string> {
     const response = await client.post('access-token', {
       'grant_type': 'client_credentials',
       'client_id': this.id,
