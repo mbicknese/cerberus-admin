@@ -21,7 +21,7 @@ export default class ClientGrant implements GrantStrategy {
     this.secret = secret
   }
 
-  async retrieveAccessToken (client: AxiosInstance): Promise<String> {
+  async retrieveAccessToken (client: AxiosInstance): Promise<string> {
     const response = await client.post('access-token', {
       'grant_type': 'client_credentials',
       'client_id': this.id,
