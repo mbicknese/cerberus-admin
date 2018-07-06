@@ -1,0 +1,7 @@
+export const apiHost = 'localhost'
+export const apiPort = '8080'
+export const apiProtocol = 'http'
+export const clientId = '79a5f68a-0b1d-4cb6-a26c-548318121842'
+// export const clientId = process.env.clientId || '70d5111a-1f5a-4161-9edb-2f542c9d8236'
+export const clientSecret = 'QcrA9Vdcfe+24Pt/h3u8I7BOBsy3m9Yd9lkQ+zbEnXw='
+// export const clientSecret = process.env.clientSecret || 'VdYbPlm8Tf+wNKsNO3wT6qPuY3ILdVpNWQyiH3yokvQ='
