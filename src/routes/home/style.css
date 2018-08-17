@@ -1,5 +1,49 @@
 .home {
-	padding: 56px 20px;
+	padding: 4rem 0;
 	min-height: 100%;
 	width: 100%;
+}
+
+.content {
+	float: left;
+	text-align: center;
+	width: calc(100% - 32rem);
+	margin: 0 2rem 0 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.content section {
+	width: 33%;
+	float: left;
+	display: flex;
+	flex-direction: column;
+	height: 8rem;
+	padding: 1rem;
+	border-right: 1px solid rgba(240, 240, 240, 1);
+	border-bottom: 1px solid rgba(240, 240, 240, 1);
+}
+.content section h2 {
+	margin: 1rem 0 0 0;
+	font-weight: 300;
+	font-size: 1rem;
+	order: 2;
+	color: rgb(69, 69, 69, 0.5);
+}
+
+.content section p:not(:empty) {
+	height: 3rem;
+	opacity: 1;
+}
+.content section p {
+	height: 0;
+	opacity: 0;
+	display: block;
+	color: rgb(1, 136, 136);
+	font-size: 3rem;
+	font-weight: 600;
+	margin: 0;
+	order: 1;
+	transition: height 0.3s, opacity 0.3s 0.2s;
+	overflow: hidden;
 }

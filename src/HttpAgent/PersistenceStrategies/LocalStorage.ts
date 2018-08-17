@@ -15,6 +15,7 @@ export default class LocalStorage implements PersistenceStrategy {
 
   public isSupported (): boolean {
     try {
+      if (localStorage === undefined) { return false }
       localStorage.setItem('59b2d3c0-0c6d-423f-a52b-4d27f4f547d0', '59b2d3c0-0c6d-423f-a52b-4d27f4f547d0')
       localStorage.removeItem('59b2d3c0-0c6d-423f-a52b-4d27f4f547d0')
       return true

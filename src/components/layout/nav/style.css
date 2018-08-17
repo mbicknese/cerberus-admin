@@ -1,0 +1,10 @@
+.nav {
+    width: 16rem;
+    float: left;
+    padding: 0 2rem 0 2rem;
+    border-right: 1px solid rgba(240, 240, 240, 1);
+}
+.nav ul {
+    height: calc(100vh - 10rem);
+    /* background: #eee; */
+}

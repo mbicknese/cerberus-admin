@@ -3,21 +3,30 @@
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 56px;
+	height: 4rem;
 	padding: 0;
-	background: #673AB7;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	border-bottom: 1px solid rgb(69, 69, 69, 0.2);
 	z-index: 50;
+	background: #fff;
 }
 
 .header h1 {
 	float: left;
 	margin: 0;
-	padding: 0 15px;
-	font-size: 24px;
-	line-height: 56px;
+	padding: 0 1rem;
+	font-size: 1.5rem;
+	line-height: 4rem;
 	font-weight: 400;
-	color: #FFF;
+}
+.header h1::before {
+	content: '';
+	display: block;
+	background-image: url('/assets/logo.svg');
+	background-size: contain;
+	height: 2.5rem;
+	margin: 0.75rem 1rem;
+	float: left;
+	width: 2.5rem;
 }
 
 .header nav {
@@ -27,22 +36,16 @@
 
 .header nav a {
 	display: inline-block;
-	height: 56px;
-	line-height: 56px;
-	padding: 0 15px;
-	min-width: 50px;
+	height: 3rem;
+	line-height: 3rem;
+	padding: 0 1rem;
+	margin: 0.5rem 1rem;
 	text-align: center;
-	background: rgba(255,255,255,0);
 	text-decoration: none;
-	color: #FFF;
+	color: #2ebcbc;
 	will-change: background-color;
 }
 
-.header nav a:hover,
 .header nav a:active {
-	background: rgba(0,0,0,0.2);
-}
-
-.header nav a.active {
-	background: rgba(0,0,0,0.4);
+	background: #def1f1;
 }
